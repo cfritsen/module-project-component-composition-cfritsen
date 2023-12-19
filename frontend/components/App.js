@@ -7,10 +7,9 @@ function App() {
   const [apod, setApod] = useState(undefined)
 
   useEffect(() => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    axios.get('http://localhost:9009/api/apod?api_key=DEMO_KEY')
     .then((result) => {
-      console.log("OG result:" + result)
-      setApod(result)
+      setApod(result.data)
     })
     .catch((err) => {
       console.log(err)
@@ -22,9 +21,9 @@ function App() {
         <h3>Grabbing Today's Photo...</h3>
     )
 }
-console.log(apod.data)
+
   return (
-    <Module data={apod.data} />
+    <Module data={apod} />
   )
 
 }
