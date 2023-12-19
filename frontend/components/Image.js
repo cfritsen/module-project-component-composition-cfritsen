@@ -14,7 +14,6 @@ const Image = data => {
     const [fullScreen, setFullScreen] = useState(false)
     const expand = () => {
         setFullScreen(!fullScreen)
-        console.log(fullScreen)
     };
 
     //fullScreen ? <FullScreen image={image} state={expand} /> : null
