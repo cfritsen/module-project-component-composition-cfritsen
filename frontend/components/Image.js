@@ -1,12 +1,12 @@
 import React from 'react'
 import {useState} from 'react'
 import FullScreen from './FullScreen Image'
+import styled from 'styled-components'
 
 const Image = data => {
     let image = data.data.url
     
     let imgStyle = {
-        //width: '100%',
         maxHeight: '40vh',
         margin: 'auto',
     }
@@ -15,9 +15,6 @@ const Image = data => {
     const expand = () => {
         setFullScreen(!fullScreen)
     };
-
-    //fullScreen ? <FullScreen image={image} state={expand} /> : null
-    <FullScreen image={image} state={expand} />
 
     return (
         <>

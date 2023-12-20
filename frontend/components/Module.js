@@ -1,27 +1,28 @@
 import React from 'react'
 import Image from './Image.js'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+    text-align: center;
+    width: 100%;
+`
+const Content = styled.div`
+    max-width: 800px;
+    margin: auto;
+`
 
 const Module = rawData => {
     const {data} = rawData;
-    let potdStyle = {
-        textAlign: 'center',
-        width: '100%',
-    }
-    let infoStyle = {
-        maxWidth: '800px',
-        margin: 'auto',
-    }
-
 
     return (
-        <div className="potd-wrapper" style={potdStyle}>
+        <Wrapper>
             <Image data={data} />
-            <div className="infoContainer" style={infoStyle}>
+            <Content>
                 <h3>{data.title}</h3>
                 <p>{data.date}</p>
                 <p>{data.explanation}</p>
-            </div>
-        </div>
+            </Content>
+        </Wrapper>
     );
     
 };
